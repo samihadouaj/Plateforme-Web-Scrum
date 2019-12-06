@@ -12,12 +12,20 @@ import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routing';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { SidebarProjectComponent } from './project/sidebar-project/sidebar-project.component';
+import {ProjectLayoutComponent} from "./layouts/project-layout/project-layout.component";
+import {ProjectLayoutModule} from "./layouts/project-layout/project-layout.module";
+import { CreateProjectComponent } from './project/create-project/create-project.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {FormsModule} from "@angular/forms";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    ProjectLayoutComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -28,7 +36,12 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     NavbarModule,
     ToastrModule.forRoot(),
     FooterModule,
-    FixedPluginModule
+    FixedPluginModule,
+    ProjectLayoutModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatButtonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

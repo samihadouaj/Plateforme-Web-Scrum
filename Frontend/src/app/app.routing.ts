@@ -1,8 +1,17 @@
+import { ProjectLayoutComponent } from './layouts/project-layout/project-layout.component';
 import { Routes } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 export const AppRoutes: Routes = [
+  {
+    path: 'project',
+    component: ProjectLayoutComponent,
+    children: [
+        {
+      path: '',
+      loadChildren: './layouts/project-layout/project-layout.module#ProjectLayoutModule'
+  }]},
   {
     path: '',
     redirectTo: 'dashboard',
@@ -20,3 +29,4 @@ export const AppRoutes: Routes = [
     redirectTo: 'dashboard'
   }
 ]
+
